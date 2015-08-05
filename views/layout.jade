@@ -1,0 +1,21 @@
+doctype html
+html(lang='en', ng-app='TestApp')
+  head
+    title= title
+    link(href='http://fonts.googleapis.com/css?family=Roboto:400,300', rel='stylesheet', type='text/css')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js')
+    script(src='/angular/third-party/angular-local-storage.min.js')
+
+    script(src='/angular/app.js')
+    script(src='/angular/directives/formatPrice.js')
+    script(src='/angular/entities/product.js')
+    script(src='/angular/services/auth.js')
+    script(src='/angular/services/authInterceptor.js')
+    script(src='/angular/controllers/main.js')
+    script(src='/angular/controllers/login.js')
+    script(src='/angular/controllers/products.js')
+  body(ng-controller='MainCtrl')
+    block content
