@@ -6,11 +6,7 @@
 	<div ng-hide="requesting">
 		<ul data-ng-repeat="product in products | orderBy: orderProp">
 		    <li class="">
-                <h4>{{product.name}}</h4>
-                <div class="clearfix">
-                    <p>{{product.description}}</p>
-                    <i class="pull-right">Price: {{product.price | formatPrice}}</i>
-                </div>
+                <a href="/#/product/detail/{{product.id}}">{{product.name}} <small>({{product.price | formatPrice}})</small></a> 
 		    </li>
 		</ul>
 	</div>

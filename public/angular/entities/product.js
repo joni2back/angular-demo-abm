@@ -8,6 +8,8 @@
             this.description = '';
             this.price = 0;
 
+            this.comments = [];
+
             angular.extend(this, arguments[0]);
         };
 

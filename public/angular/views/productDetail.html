@@ -1,0 +1,13 @@
+<section>
+    <h3>Product details</h3>
+
+    <div class="text-center" ng-show="requesting">Loading</div>
+
+    <div ng-hide="requesting">
+        <h4>{{product.name}}</h4>
+        <div class="clearfix">
+            <p>{{product.description}}</p>
+            <i class="pull-right">Price: {{product.price | formatPrice}}</i>
+        </div>
+    </div>
+</section>

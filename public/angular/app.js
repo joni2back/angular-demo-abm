@@ -5,14 +5,24 @@
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider.
         when('/login', {
-            templateUrl: '/angular/views/login-form.html',
+            templateUrl: '/angular/views/loginForm.html',
             controller: 'LoginCtrl',
             activeTab: 'login'
         }).
         when('/products', {
-            templateUrl: '/angular/views/products-list.html',
-            controller: 'ProductsCtrl',
-            activeTab: 'products'
+            templateUrl: '/angular/views/productList.html',
+            controller: 'ProductListCtrl',
+            activeTab: 'productList'
+        }).
+        when('/product/create', {
+            templateUrl: '/angular/views/productCreate.html',
+            controller: 'ProductCreateCtrl',
+            activeTab: 'productCreate'
+        }).
+        when('/product/detail/:productId', {
+            templateUrl: '/angular/views/productDetail.html',
+            controller: 'ProductDetailCtrl',
+            activeTab: 'productDetail'
         }).
         otherwise({
             templateUrl: '/angular/views/main.html',

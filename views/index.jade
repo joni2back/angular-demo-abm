@@ -15,8 +15,10 @@ block content
             ul.nav.navbar-nav
               li(ng-class='{active: !$route.current.activeTab || $route.current.activeTab == "main"}')
                 a(href='/#/') Home
-              li(ng-class='{active: $route.current.activeTab == "products"}')
-                a(href='/#products') Products
+              li(ng-class='{active: $route.current.activeTab == "products"}' ng-show='authService.authentication.isAuth')
+                a(href='/#products') View products
+              li(ng-class='{active: $route.current.activeTab == "productCreate"}' ng-show='authService.authentication.isAuth')
+                a(href='/#product/create') Create new
 
             ul.nav.navbar-nav.navbar-right
               li(ng-show='!authService.authentication.isAuth', ng-class='{active: $route.current.activeTab == "login"}')
