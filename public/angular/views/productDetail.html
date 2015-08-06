@@ -7,7 +7,54 @@
         <h4>{{product.name}}</h4>
         <div class="clearfix">
             <p>{{product.description}}</p>
-            <i class="pull-right">Price: {{product.price | formatPrice}}</i>
+            <p><b>Price:</b> {{product.price | formatPrice}}</p>
         </div>
+
+        <ul>
+            <li data-ng-repeat="comment in products.comments | orderBy: id">
+                <a href="/#/product/detail/{{product.id}}">{{product.name}} <small>({{product.price | formatPrice}})</small></a> 
+            </li>
+        </ul>
+
+        <div class="list-group">
+          <h4 class="list-group-item disabled">Comments</h4>
+
+          <div class="list-group-item" data-ng-repeat="comment in product.comments | orderBy: id">
+            <b>{{ comment.user }}: </b>{{ comment.comment }}
+          </div>
+          
+          <div class="list-group-item" ng-show="!product.comments.length">
+            <i>No comments yet.</i>
+          </div>
+
+        </div>
+
+       <div class="well comment-form" ng-hide="successComment">
+            <form ng-submit="leaveComment()">
+                <h4>Leave a comment</h4>
+                <div class="row clearfix">
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" id="input-name" placeholder="Username" ng-model="tempComment.user" />
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" id="input-name" placeholder="Comment" ng-model="tempComment.comment" />
+                    </div>
+                    <div class="col-xs-2 text-right">
+                        <button type="submit" class="btn btn-primary">COMMENT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div ng-show="successComment">
+            <div class="alert alert-success">
+                <h4>Thank you!</h4>
+                <p>The comment was successfully posted :)</p>
+                <p>
+                    <a href="" ng-click="commentAgain()">Comment again</a>
+                </p>
+            </div>
+        </div>
+
     </div>
 </section>

@@ -4,10 +4,14 @@
 	<div class="text-center" ng-show="requesting">Loading</div>
 
 	<div ng-hide="requesting">
-		<ul data-ng-repeat="product in products | orderBy: orderProp">
-		    <li class="">
+		<ul class="product-list">
+		    <li data-ng-repeat="product in products | orderBy: orderProp">
                 <a href="/#/product/detail/{{product.id}}">{{product.name}} <small>({{product.price | formatPrice}})</small></a> 
 		    </li>
 		</ul>
+
+        <div class="alert alert-warning" ng-show="!products.length">
+            <i>No products yet.</i>
+        </div>
 	</div>
 </section>

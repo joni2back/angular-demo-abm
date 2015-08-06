@@ -26,11 +26,16 @@
               </div>
             </form>
         </div>
+        
         <div ng-show="success">
             <div class="alert alert-success">
                 <h4>Thank you!</h4>
                 <p>The product was successfully saved :)</p>
                 <p>Now you can view it in the <a href="/#/products"><b>list</b></a>
+                <p>
+                    Or maybe want to <a href="" ng-click="createAgain()">create another product</a>
+                  </a>
+                </p>
             </div>
         </div>
     </div>

@@ -11,11 +11,15 @@
             $scope.requesting = true;
             return $http.post('/api/product/create', data).success(function(data) {
                 $scope.success = data;
-                //$scope.product = new Product(fata);
             }).error(function(data) {
             })['finally'](function() {
                 $scope.requesting = false;
             });
+        };
+
+        $scope.createAgain = function() {
+            $scope.product = new Product();
+            $scope.success = false;
         };
 
         $scope.$on('$routeChangeSuccess', function(next, current) {
