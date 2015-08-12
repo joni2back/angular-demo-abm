@@ -9,6 +9,11 @@
             controller: 'LoginCtrl',
             activeTab: 'login'
         }).
+        when('/logout', {
+            templateUrl: '/angular/views/loginForm.html',
+            controller: 'LoginCtrl',
+            activeTab: 'logout'
+        }).
         when('/products', {
             templateUrl: '/angular/views/productList.html',
             controller: 'ProductListCtrl',

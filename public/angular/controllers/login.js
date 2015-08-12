@@ -16,5 +16,14 @@
             });
         };
 
+        $scope.logout = function() {
+            authService.logOut();
+            $location.path('/login');
+        };
+
+        $scope.$on('$routeChangeSuccess', function(next, current) {
+            $location.$$path === '/logout' && $scope.logout();
+        });
+
     }]);
 })(angular);

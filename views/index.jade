@@ -27,6 +27,6 @@ block content
                 a
                   b(ng-bind="'Welcome ' + authService.authentication.username")
               li(ng-show='authService.authentication.isAuth')
-                a(href='#', ng-click='logout()') Logout
+                a(href='/#logout') Logout
       ng-view
 

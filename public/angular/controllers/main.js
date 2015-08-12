@@ -1,14 +1,9 @@
 (function(angular) {
     "use strict";
-    angular.module('TestApp').controller('MainCtrl', ['$scope', '$route', '$location', 'authService', function($scope, $route, $location, authService) {
+    angular.module('TestApp').controller('MainCtrl', ['$scope', '$route', 'authService', function($scope, $route, authService) {
 
         $scope.$route = $route;
         $scope.authService = authService;
-
-        $scope.logout = function () {
-            authService.logOut();
-            $location.path('/');
-        };
 
     }]);
 })(angular);
